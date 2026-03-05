@@ -5,10 +5,9 @@ const PATH = "src/data/db.json";
 export const getInitialState = () => ({
         selectedUser: {},
         users: [],
-        streaks: [],
         intakes: [],
-        dailyGoals: [],
-        settings: {}
+        settings: {},
+        selectedUser: null
 });
 
 export const loadStateFromDisk = async () => {

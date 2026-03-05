@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "17727224686285",
+      "name": "Lucas",
+      "weight": 72,
+      "dailyGoal": 2592
+    }
+  ],
+  "streaks": [],
+  "intakes": [
+    {
+      "id": "17727412781981",
+      "userId": "17727224686285",
+      "amount": 500,
+      "date": "2026-03-05T20:07:58.198Z"
+    }
+  ],
+  "dailyGoals": [],
+  "settings": {},
+  "selectedUser": {
+    "id": "17727224686285",
+    "name": "Lucas",
+    "weight": 72,
+    "dailyGoal": 2592
+  }
+}

@@ -1,5 +1,4 @@
 import { saveStateToDisk } from "../../repositories/state.repository.js";
-// import { selectUserById } from "../../services/user/selectUserById.service.js";
 
 export const selectUser = async (state, prompt) => {
     const users = state.users;
@@ -16,5 +15,7 @@ export const selectUser = async (state, prompt) => {
 
     state.selectedUser = users[index];
     console.log("Usuário selecionado:", state.selectedUser.name);
+    
     await saveStateToDisk(state);
+
 } 
