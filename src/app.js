@@ -1,0 +1,105 @@
+import readline from "readline";
+import { createUserUseCase } from "./use-cases/user/createUser.usecase.js";
+import { loadStateUseCase } from "./use-cases/state/loadState.usecase.js";
+import { state } from "./state/app.state.js";
+import { listAllUsers } from "./use-cases/user/listUsers.usecase.js";
+import { deleteUser } from "./use-cases/user/deleteUser.usecase.js";
+import { selectUser } from "./use-cases/user/selectUser.usecase.js";
+
+await loadStateUseCase(state);
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const prompt = (question) => {
+    return new Promise((resolve) => {
+        rl.question(question, (answer) => {
+            resolve(answer);
+        });
+    });
+};
+
+const main = async () => {
+
+    const mainMenuScreen = `
+    ==============================
+    WATER TRACKER
+    ==============================
+
+    USUÁRIOS
+    1 - Criar novo usuário
+    2 - Editar usuário
+    3 - Deletar usuário
+    4 - Listar usuários
+    5 - Selecionar usuário ativo
+
+    INGESTÃO DE ÁGUA (usuário ativo)
+    6 - Registrar ingestão
+    7 - Editar ingestão
+    8 - Remover ingestão
+    9 - Listar ingestões do dia
+
+    PROGRESSO
+    10 - Ver progresso de hoje
+    11 - Ver histórico por data
+    12 - Ver estatísticas gerais
+
+    SISTEMA
+    13 - Resetar dados
+    0  - Sair
+    `;
+
+   
+    
+    let isMenuOpen = true;
+
+
+    while (isMenuOpen) {
+        
+        let opcao = (await prompt (mainMenuScreen)).trim();
+        
+        switch(opcao) {
+
+            case "1":
+                await createUserUseCase(state, prompt);
+                break;
+
+            // case "2":
+            //     await editUser(state, prompt);
+            //     break;
+
+            case "3":
+                await deleteUser(state, prompt);
+                break;
+
+            case "4":
+                listAllUsers();
+                break;
+
+
+            case "5": 
+                await selectUser(state, prompt);
+                break;
+
+            // case "6":
+            //     await registerIntake(state, prompt);
+            //     break;
+
+            case "0": 
+                console.log("Saindo do menu...");
+                isMenuOpen = false;
+                break;
+            default: 
+                console.log("Comando inválido.");
+        }
+    }
+
+    
+
+    rl.close();
+
+}
+
+main();
