@@ -1,3 +1,5 @@
+import { waterHistory } from "./water-history.service.js";
+
 export const dailySummary = (intakes, user) => {
     const today = new Date().toISOString().slice(0, 10);
 
@@ -6,12 +8,16 @@ export const dailySummary = (intakes, user) => {
         .reduce((total, intake) => total + intake.amount, 0);
     const goal = user.dailyGoal;
 
-    console.log(consumed);
+    const isGoalReached = consumed >= goal;
+    
+    const todayHistory = waterHistory(intakes, today, user.id);
 
     return {
         goal, 
         consumed,
         remaining: goal - consumed,
-        percentage: ((consumed / goal) * 100).toFixed(2)
+        percentage: ((consumed / goal) * 100).toFixed(2),
+        isGoalReached,
+        todayHistory
     }
 }
