@@ -12,15 +12,18 @@ export const askUserSelection = async (prompt, users) => {
     .map((user, index) => `${index + 1} - ${user.name}`)
     .join("\n");
     
+    console.clear();
     const answer = await prompt(`
----------------------------------------------------------
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 
 ${styles.bold}Por favor, selecione um usuário:${styles.reset}
 
 ${list}
----------------------------------------------------------
 
-Número: `);
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
+
+
+Selecione opção: `);
 
     const selectedIndex = Number(answer) - 1;
 

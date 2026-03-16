@@ -11,6 +11,10 @@ export const deleteUser = async (state, prompt) => {
   
     state.users = deleteUserById(users, userToDelete.id);
 
+    if (state.selectedUser.id === userToDelete.id) {
+        state.selectedUser = null;
+    }
+
     await saveStateUseCase(state);
     
     return Result.view("userDeleted", {
