@@ -5,15 +5,21 @@ import { styles } from "../../../utils/cli-styles.utils.js";
 export const mainMenuScreen  = (state) => {
 
     if (state.users.length === 0) {
-       return `
-${styles.bold}ÁguaDaily™ CLI App${styles.reset}
+return `
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 
-⚠︎ Nenhum usuário encontrado.
+${styles.bold}ÁguaDaily™${styles.reset}
 
-1 - Criar usuário
-0 - Sair
+
+⚠︎  Nenhum usuário encontrado.
+
+
+${styles.dim}1 - ${styles.reset}Criar usuário
+${styles.dim}0 - ${styles.reset}Sair
+
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 `
-       }
+}
 
     const activeUser = state.selectedUser ?? null;
     
@@ -25,37 +31,46 @@ ${styles.bold}ÁguaDaily™ CLI App${styles.reset}
     }
 
     const activeUserHeader = 
-    `${activeUser ? 
-`${styles.bold}Usuário selecionado:${styles.reset} ${activeUser.name}
-${styles.bold}Meta diária:${styles.reset} ${activeUser.dailyGoal} ml
-${styles.bold}Consumido hoje:${styles.reset} ${totalIntakeToday} ml` 
+`${activeUser ? 
+`${styles.dim}Usuário:${styles.reset}        ${activeUser.name}
+${styles.dim}Meta diária:${styles.reset}    ${activeUser.dailyGoal} ml
+${styles.dim}Consumido hoje:${styles.reset} ${totalIntakeToday} ml` 
 : 
-`⚠︎ Nenhum usuário selecionado`
-    }`
+`⚠︎  Nenhum usuário selecionado`
+}`
 
     
 return `
-------------------------------------------------
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 
-${styles.bold}ÁguaDaily™ CLI App${styles.reset}
+${styles.bold}ÁguaDaily™${styles.reset}
 
 ${activeUserHeader}
+
 ${activeUser ? `
-1 - Registrar consumo
-2 - Ver progresso de hoje
+${styles.dim}MENU${styles.reset}
 
-3 - Histórico
-4 - Estatísticas
+${styles.dim}1 - ${styles.reset}Registrar consumo
+${styles.dim}2 - ${styles.reset}Ver progresso de hoje
 
-5 - Trocar usuário
-6 - Gerenciar usuários
+${styles.dim}3 - ${styles.reset}Histórico
+${styles.dim}4 - ${styles.reset}Estatísticas
 
-0 - Sair
-`: 
+${styles.dim}5 - ${styles.reset}Trocar usuário
+${styles.dim}6 - ${styles.reset}Gerenciar usuários
+
+${styles.dim}0 - ${styles.reset}Sair
+
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
+
+${styles.dim}Digite o número da opção:${styles.reset} `
+: 
 `
-5 - Selecionar usuário
-0 - Sair
-------------------------------------------------
-`
+${styles.dim}5 - ${styles.reset}Selecionar usuário
+${styles.dim}0 - ${styles.reset}Sair
+
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
+
+${styles.dim}Digite o número da opção:${styles.reset} `
 }`
 }

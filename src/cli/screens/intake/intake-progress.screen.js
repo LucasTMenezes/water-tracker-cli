@@ -13,31 +13,27 @@ export const intakeProgressScreen = ({ selectedUser, summary }) => {
     .join("\n");
 
     return `
-------------------------------------------------------------
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
+
 ${styles.bold}Resumo Diário ${formatDateBR(new Date().toISOString())}${styles.reset}
 
-${styles.bold}${selectedUser.name}${styles.reset}
-
-${styles.bold}Meta:${styles.reset}       ${summary.goal} ml
-${styles.bold}Consumido:${styles.reset}  ${summary.consumed} ml
-${styles.bold}Restante:${styles.reset}   ${Math.max(summary.remaining, 0)} ml
+${styles.dim}Usuário:${styles.reset}    ${selectedUser.name}${styles.reset}
+${styles.dim}Meta:${styles.reset}       ${summary.goal} ml
+${styles.dim}Consumido:${styles.reset}  ${summary.consumed} ml
+${styles.dim}Restante:${styles.reset}   ${Math.max(summary.remaining, 0)} ml
                             
-${styles.bold}Progresso:${styles.reset}
-
+${styles.dim}Progresso:${styles.reset}
 ${styles.green + " ".repeat(filled) + styles.white + " ".repeat(empty) + styles.reset} ${summary.percentage} %
 
-
-${goalReachedMessage}
+    ${goalReachedMessage}
 ${todayHistory.length > 0 ?`
-${styles.bold}Histórico de Consumos${styles.reset}
+${styles.dim}Histórico de Consumo:${styles.reset}
 
-${styles.bold}Data            Qtd.${styles.reset}
+${styles.dim}Data            Qtd.${styles.reset}
 ${todayHistory}
 `
     :
-    ""
+"\n"
 }
-
-
-------------------------------------------------------------`
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}`
 };
