@@ -51,13 +51,14 @@ ${activeUser ? `
 ${styles.dim}MENU${styles.reset}
 
 ${styles.dim}1 - ${styles.reset}Registrar consumo
-${styles.dim}2 - ${styles.reset}Ver progresso de hoje
+${styles.dim}2 - ${styles.reset}Editar consumo
+${styles.dim}3 - ${styles.reset}Ver progresso de hoje
 
-${styles.dim}3 - ${styles.reset}Histórico
-${styles.dim}4 - ${styles.reset}Estatísticas
+${styles.dim}4 - ${styles.reset}Histórico
+${styles.dim}5 - ${styles.reset}Estatísticas
 
-${styles.dim}5 - ${styles.reset}Trocar usuário
-${styles.dim}6 - ${styles.reset}Gerenciar usuários
+${styles.dim}6 - ${styles.reset}Trocar usuário
+${styles.dim}7 - ${styles.reset}Gerenciar usuários
 
 ${styles.dim}0 - ${styles.reset}Sair
 

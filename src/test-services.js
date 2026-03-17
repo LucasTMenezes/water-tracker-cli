@@ -1,24 +1,12 @@
+import { formatDateBR } from "./utils/date.utils.js";
 
-import { intakeHistory } from "./use-cases/intake/intake-history.usecase.js";
-import { state } from "./state/app.state.js";
-import { loadStateUseCase } from "./use-cases/state/load-state.usecase.js";
+const answer = "11/03/2026";
+const day = Number(answer.slice(0, 2));
+const month = Number(answer.slice(3, 5)) - 1;
+const year = Number(answer.slice(6));
 
-const testData = {
-    intakes: [
-    {
-      id: "17732730423462",
-      userId: "17732726453048",
-      amount: 250,
-      date: "2026-03-11T23:50:42.346Z"
-    },
-    ],
-    selectedUser: {
-    id: "17732726453048",
-    name: "Lucas",
-    weight: 72,
-    dailyGoal: 2592
-    }
+console.log(day, month, year);
+const formattedData = formatDateBR(new Date(Number(answer.slice(6)), Number(answer.slice(3, 5)) -1, Number(answer.slice(0, 2))));
+// console.log(formatDateBR(new Date(year, month, day)));
+console.log(formattedData);
 
-}
-
-console.log(intakeHistory(testData.intakes, testData.selectedUser.id));

@@ -6,6 +6,7 @@ import { userCreatedScreen } from "./screens/user/user-created.screen.js";
 import { userDeletedScreen } from "./screens/user/user-deleted.screen.js";
 import { userSelectedScreen } from "./screens/user/user-selected.screen.js";
 import { usersListScreen } from "./screens/user/users-list.screen.js";
+import { intakeEditScreen } from "./screens/intake/intake-edited.screen.js";
 
 export const screens = {
     // USER
@@ -21,4 +22,5 @@ export const screens = {
     intakeCreated: intakeCreatedScreen,
     intakeProgress: intakeProgressScreen,
     intakeHistory: intakeHistoryScreen,
+    intakeEdited: intakeEditScreen
 }

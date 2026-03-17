@@ -4,6 +4,8 @@ import { intakeHistory } from "../use-cases/intake/intake-history.usecase.js";
 import { createUserUseCase } from "../use-cases/user/create-user.usecase.js";
 import { selectUser } from "../use-cases/user/select-user.usecase.js";
 import { mainMenuScreen } from "./screens/menu/menu.screen.js";
+import { editIntake } from "../use-cases/intake/edit-intake.usecase.js";
+
 import { Result } from "../utils/result.utils.js";
 
 export const mainMenuController = async (state, prompt) => {
@@ -19,19 +21,23 @@ export const mainMenuController = async (state, prompt) => {
                 return await createWater(state, prompt);
             };
             
-        case "2":
-            return await dailyIntakeProgress(state, prompt);
         
+        case "2":
+            return await editIntake(state, prompt);
+
         case "3":
+            return await dailyIntakeProgress(state, prompt);
+
+        case "4":
             return await intakeHistory(state, prompt);
         
-        // case "4":
+        // case "5":
         //     return await intakeStatistics(state, prompt);
         
-        case "5":
+        case "6":
             return await selectUser(state, prompt);
         
-        case "6":
+        case "7":
             return Result.navigate("usersMenu");
         
         case "0":
