@@ -9,11 +9,11 @@ export const usersListScreen = ({ users }) => {
     .join("\n");
 
     return `
-----------------------------------------------
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 
 ${styles.bold}Lista de Usuários${styles.reset}
 
 ${list}
 
-----------------------------------------------`
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}`
 };

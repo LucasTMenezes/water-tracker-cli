@@ -18,17 +18,21 @@ export const usersMenuScreen  = (state) => {
     //     : 
     //     `⚠︎ Nenhum usuário selecionado`}`
     return `
-------------------------------------------------
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
 
 ${styles.bold}ÁguaDaily™ CLI App${styles.reset}
 
 ${styles.bold}${styles.dim}GERENCIAR USUÁRIOS${styles.reset}
 
-1 - Criar usuário
-2 - Editar usuário
-3 - Deletar usuário
-4 - Listar usuários
-5 - Selecionar usuário ativo
+${styles.dim}1 - ${styles.reset}Criar usuário
+${styles.dim}2 - ${styles.reset}Editar usuário
+${styles.dim}3 - ${styles.reset}Deletar usuário
+${styles.dim}4 - ${styles.reset}Listar usuários
+${styles.dim}5 - ${styles.reset}Selecionar usuário ativo
 
-0 - Voltar`
+${styles.dim}0 - ${styles.reset}Voltar
+
+${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
+
+${styles.dim}Digite o número da opção:${styles.reset} `
 }

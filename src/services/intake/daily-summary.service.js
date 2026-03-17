@@ -10,7 +10,7 @@ export const dailySummary = (intakes, user) => {
 
     const isGoalReached = consumed >= goal;
     
-    const todayHistory = waterHistory(intakes, today, user.id);
+    const todayHistory = waterHistory(intakes, user.id, today);
 
     return {
         goal, 
