@@ -1,6 +1,7 @@
 import { intakeCreatedScreen } from "./screens/intake/intake-created.screen.js";
 import { intakeProgressScreen } from "./screens/intake/intake-progress.screen.js";
 import { intakeHistoryScreen } from "./screens/intake/intake-history.screen.js";
+import { intakeEditScreen } from "./screens/intake/intake-edited.screen.js";
 
 import { userCreatedScreen } from "./screens/user/user-created.screen.js";
 import { userDeletedScreen } from "./screens/user/user-deleted.screen.js";

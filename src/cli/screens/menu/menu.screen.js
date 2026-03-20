@@ -51,8 +51,13 @@ ${activeUser ? `
 ${styles.dim}MENU${styles.reset}
 
 ${styles.dim}1 - ${styles.reset}Registrar consumo
+<<<<<<< HEAD
 ${styles.dim}2 - ${styles.reset}Editar consumo
 ${styles.dim}3 - ${styles.reset}Ver progresso de hoje
+=======
+${styles.dim}2 - ${styles.reset}Ver progresso de hoje
+${styles.dim}3 - ${styles.reset}Gerenciar consumos
+>>>>>>> 689c491 (feat(intake): add edit option for water intake entries)
 
 ${styles.dim}4 - ${styles.reset}Histórico
 ${styles.dim}5 - ${styles.reset}Estatísticas

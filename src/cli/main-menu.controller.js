@@ -7,6 +7,7 @@ import { mainMenuScreen } from "./screens/menu/menu.screen.js";
 import { editIntake } from "../use-cases/intake/edit-intake.usecase.js";
 
 import { Result } from "../utils/result.utils.js";
+import { editIntake } from "../use-cases/intake/edit-intake.usecase.js";
 
 export const mainMenuController = async (state, prompt) => {
 
@@ -21,6 +22,7 @@ export const mainMenuController = async (state, prompt) => {
                 return await createWater(state, prompt);
             };
             
+<<<<<<< HEAD
         
         case "2":
             return await editIntake(state, prompt);
@@ -28,6 +30,14 @@ export const mainMenuController = async (state, prompt) => {
         case "3":
             return await dailyIntakeProgress(state, prompt);
 
+=======
+        case "2":
+            return await dailyIntakeProgress(state, prompt);
+
+        case "3": 
+            return await editIntake(state, prompt);
+        
+>>>>>>> 689c491 (feat(intake): add edit option for water intake entries)
         case "4":
             return await intakeHistory(state, prompt);
         
