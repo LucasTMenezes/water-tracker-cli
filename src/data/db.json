@@ -1,31 +1,27 @@
 {
   "users": [
     {
-      "id": "17736921535909",
-      "name": "Marcella",
-      "weight": 68,
-      "dailyGoal": 2448
+      "id": "17751588328487",
+      "name": "Lucas",
+      "weight": 91,
+      "dailyGoal": 3000
     }
   ],
   "streaks": [],
   "intakes": [
     {
-      "id": "17736922103431",
-      "userId": "17736921535909",
-<<<<<<< HEAD
-      "amount": 500,
-=======
-      "amount": 0,
->>>>>>> 52d1bad (feat(intake): add edit intake, change the date or amount)
-      "date": "2026-03-16T20:16:50.343Z"
+      "id": "17751588576472",
+      "userId": "17751588328487",
+      "amount": 750,
+      "date": "2026-04-02T19:40:57.647Z"
     }
   ],
   "dailyGoals": [],
   "settings": {},
   "selectedUser": {
-    "id": "17736921535909",
-    "name": "Marcella",
-    "weight": 68,
-    "dailyGoal": 2448
+    "id": "17751588328487",
+    "name": "Lucas",
+    "weight": 91,
+    "dailyGoal": 2484
   }
 }

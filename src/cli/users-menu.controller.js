@@ -4,6 +4,7 @@ import { createUserUseCase } from "../use-cases/user/create-user.usecase.js";
 import { deleteUser } from "../use-cases/user/delete-user.usecase.js";
 import { listAllUsers } from "../use-cases/user/list-users.usecase.js";
 import { selectUser } from "../use-cases/user/select-user.usecase.js";
+import { editUserUseCase } from "../use-cases/user/edit-user.usecase.js";
 
 export const usersMenuController = async (state, prompt) => {
 
@@ -13,6 +14,9 @@ export const usersMenuController = async (state, prompt) => {
 
         case "1":
             return await createUserUseCase(state, prompt);
+        
+        case "2":
+            return await editUserUseCase(state, prompt);
 
         case "3":
             return await deleteUser(state, prompt);
