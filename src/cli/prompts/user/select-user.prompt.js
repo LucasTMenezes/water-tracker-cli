@@ -32,5 +32,5 @@ Selecione opção: `);
         return null
     }
 
-    return users[selectedIndex];
+    return users[selectedIndex].id;
 };

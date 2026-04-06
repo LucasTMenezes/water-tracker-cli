@@ -1,7 +1,6 @@
 import { styles } from "../../../utils/cli-styles.utils.js"
 
-export const userSelectedScreen = ({ selectedUser }) => {
-
+export const userSelectedScreen = ({selectedUser}) => {
 
     return `
 ${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}

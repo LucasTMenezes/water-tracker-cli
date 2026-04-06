@@ -7,12 +7,20 @@ import { Result } from "../../utils/result.utils.js";
 export const createWater = async (state, prompt) => {
 
 
-    const selectedUser = await requireSelectedUser(state, prompt);
+    const selectedUserId = await requireSelectedUser(state, prompt);
 
     const amount = await askIntake(prompt);
     
+    const selectedUser = state.users.find(user => user.id === selectedUserId);
+
     const newWater = addWater(selectedUser.id, amount);
     
+
+    if (newWater === false){
+        console.log("Erro ao adicionar nova ingestão de água.")
+        return;
+    } 
+
     state.intakes.push(newWater);
 
     await saveStateUseCase(state);

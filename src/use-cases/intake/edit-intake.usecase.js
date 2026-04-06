@@ -8,9 +8,10 @@ import { Result } from "../../utils/result.utils.js";
 
 export const editIntake = async (state, prompt) => {
 
-    const activeUser = await requireSelectedUser(state, prompt);
+    const activeUserId = await requireSelectedUser(state, prompt);
+    const selectedUser = state.users.find(user => user.id === activeUserId);
 
-    const intakeHistory = waterHistory(state.intakes, activeUser.id);
+    const intakeHistory = waterHistory(state.intakes, selectedUser.id);
 
     const selectedIntake = await askIntakeSelection(prompt, intakeHistory);
 

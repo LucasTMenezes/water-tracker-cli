@@ -6,19 +6,19 @@ import { askUserEdit } from "../../cli/prompts/user/ask-user-edit.prompt.js";
 export const editUserUseCase = async (state, prompt) => {
     const users = state.users;
 
-    const selectedUser = await askUserSelection(prompt, users);
+    const selectedUserId = await askUserSelection(prompt, users);
 
-    state.selectedUser = selectedUser;
+    state.selectedUser = selectedUserId;
 
     const edit = await askUserEdit(prompt);
 
     const updatedUser = {
-        ...selectedUser,
+        ...users.find(user => user.id === selectedUserId),
         [edit.property]: edit.newValue,
         [edit.property]: edit.newValue,
     };
 
-    const userIndex = users.findIndex(user => user.id === selectedUser.id);
+    const userIndex = users.findIndex(user => user.id === selectedUserId);
     state.users[userIndex] = updatedUser;
 
     await saveStateUseCase(state);

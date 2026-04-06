@@ -4,7 +4,9 @@ import { Result } from "../../utils/result.utils.js";
 
 export const intakeHistory = async (state, prompt) => {
 
-    const selectedUser = await requireSelectedUser(state, prompt);
+    const selectedUserId = await requireSelectedUser(state, prompt);
+
+    const selectedUser = state.users.find(user => user.id === selectedUserId);
 
     if (!selectedUser) return;
 

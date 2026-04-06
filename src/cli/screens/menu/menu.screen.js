@@ -21,9 +21,10 @@ ${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.r
 `
 }
 
-    const activeUser = state.selectedUser ?? null;
+    const activeUser = state.users.find(user => user.id === state.selectedUser) ?? null;
     
     let totalIntakeToday;
+
 
     if (activeUser) {
         const todayIntakeSummary = dailySummary(state.intakes, activeUser);
@@ -67,7 +68,7 @@ ${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.r
 ${styles.dim}Digite o número da opção:${styles.reset} `
 : 
 `
-${styles.dim}5 - ${styles.reset}Selecionar usuário
+${styles.dim}6 - ${styles.reset}Selecionar usuário
 ${styles.dim}0 - ${styles.reset}Sair
 
 ${styles.dim}- - - - - - - - - - - - - - - - - - - - - - - - - - - - -${styles.reset}
